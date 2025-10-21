@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KING SALUT - Яркие салюты и фейерверки с доставкой</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <!-- Top Black Bar -->
+        <div class="header-top">
+            <div class="container">
+                <div class="header-top-content">
+                    <!-- Logo -->
+                    <div class="logo">
+                        <!-- Можно использовать иконку или изображение -->
+                        <img src="images/icons/crown-icon.svg" alt="Crown" class="logo-icon">
+                    </div>
+                    
+                    <!-- Contact -->
+                    <div class="contact">
+                        <i class="fas fa-phone"></i>
+                        <span>+7 (776) 456 78 68</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bottom White Bar -->
+        <div class="header-bottom">
+            <div class="container">
+                <div class="header-bottom-content">
+                    <!-- Navigation -->
+                    <nav class="nav">
+                        <a href="#" class="nav-link">Главная</a>
+                        <a href="#" class="nav-link dropdown">
+                            Каталог
+                            <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <a href="#" class="nav-link">По событиям</a>
+                        <a href="#" class="nav-link">Доставка и оплата</a>
+                        <a href="#" class="nav-link">О компании</a>
+                    </nav>
+                    
+                    <!-- Search -->
+                    <div class="search">
+                        <input type="text" placeholder="Поиск по 1789 товаров">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    
+                    <!-- Icons -->
+                    <div class="icons">
+                        <i class="fas fa-shopping-cart"></i>
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Яркие салюты и фейерверки с доставкой</h1>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-number">200,000+</div>
+                        <div class="stat-label">Довольных клиентов</div>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat">
+                        <div class="stat-number">130+</div>
+                        <div class="stat-label">Заказов в день</div>
+                    </div>
+                </div>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary">
+                        <i class="fas fa-gift"></i>
+                        Выбрать набор к празднику
+                    </button>
+                    <button class="btn btn-success">
+                        <i class="fab fa-whatsapp"></i>
+                        Заказать звонок
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Category Filters -->
+    <section class="categories">
+        <div class="container">
+            <div class="category-filters">
+                <!-- Первый ряд -->
+                <div class="category-filter">
+                    <span class="category-icon">🔥</span>
+                    <span>Салюты от 5 000 до 25 000 тг</span>
+                </div>
+                <div class="category-filter">
+                    <span class="category-icon">🔥</span>
+                    <span>Салюты от 25 000 - 50 000 тг</span>
+                </div>
+                <div class="category-filter">
+                    <span class="category-icon">🔥</span>
+                    <span>Салюты от 50 000 до 100 000 тг</span>
+                </div>
+                
+                <!-- Второй ряд -->
+                <div class="category-filter">
+                    <span class="category-icon">🔥</span>
+                    <span>Салюты от 100 000 и выше</span>
+                </div>
+                <div class="category-filter">
+                    <span class="category-icon">🎄</span>
+                    <span>Новогодние салюты</span>
+                </div>
+                <div class="category-filter">
+                    <span class="category-icon">👑</span>
+                    <span>VIP салюты</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Arrivals -->
+    <section class="products-section">
+        <div class="container">
+            <h2 class="section-title">Новинки</h2>
+            <div class="products-grid" id="new-products">
+                <!-- Товары будут добавлены через JavaScript -->
+            </div>
+            <button class="btn btn-show-all">Показать все</button>
+        </div>
+    </section>
+
+    <!-- Top Sales -->
+    <section class="products-section">
+        <div class="container">
+            <h2 class="section-title">Топ продаж</h2>
+            <div class="products-grid" id="top-products">
+                <!-- Товары будут добавлены через JavaScript -->
+            </div>
+            <button class="btn btn-show-all">Показать все</button>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Частые вопросы</h2>
+            <div class="faq-list">
+                <div class="faq-item active">
+                    <div class="faq-question">
+                        <h3>Как купить красивые салюты и фейерверки в Алматы, Казахстане</h3>
+                        <div class="icon-container">
+                            <i class="fas fa-minus"></i>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>У нас на сайте вы можете купить онлайн самые красивые наземные салюты и фейерверки крупного и мелкого калибра по выгодной цене с доставкой. Также вы можете посетить наш магазин в Алматы, где представлен широкий ассортимент пиротехнических изделий.</p>
+                        <p>Для удобства выбора используйте фильтры по цене, типу и калибру салютов. Мы регулярно проводим акции и скидки на популярные товары. Все наши салюты сертифицированы и безопасны в использовании.</p>
+                        <p>Доставка осуществляется по всему Казахстану. Оплата возможна наличными при получении или через KASPI Gold.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Как безопасно запускать салют?</h3>
+                        <div class="icon-container">
+                            <i class="fas fa-plus"></i>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Для безопасного запуска салютов необходимо соблюдать несколько важных правил. Выберите открытую площадку без деревьев и строений в радиусе 50 метров. Убедитесь, что поблизости нет легковоспламеняющихся предметов.</p>
+                        <p>Перед запуском внимательно прочитайте инструкцию на упаковке. Установите салют вертикально на ровную поверхность и закрепите его. Отойдите на безопасное расстояние не менее 20 метров перед поджиганием фитиля.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Как правильно ставить фейерверк?</h3>
+                        <div class="icon-container">
+                            <i class="fas fa-plus"></i>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Правильная установка фейерверка является залогом безопасности и красивого зрелища. Выберите ровную горизонтальную поверхность без наклона. Для наземных салютов используйте специальные подставки или закрепите их в земле.</p>
+                        <p>Убедитесь, что фейерверк установлен строго вертикально. Проверьте, что фитиль свободен и не поврежден. Никогда не устанавливайте салюты на скользких или неустойчивых поверхностях.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Какие салюты самые лучшие?</h3>
+                        <div class="icon-container">
+                            <i class="fas fa-plus"></i>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Лучшие салюты отличаются качеством зарядов, яркостью и продолжительностью эффектов. Мы рекомендуем салюты VIP серии с количеством зарядов от 100 и выше. Они обеспечивают продолжительное и зрелищное шоу.</p>
+                        <p>Для особых случаев выбирайте салюты с разнообразными эффектами: мерцающие звезды, цветные шары, трещащие заряды. Наши консультанты помогут подобрать идеальный салют для вашего праздника.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <div class="logo">
+                        <i class="fas fa-crown"></i>
+                        <span>KING SALUT</span>
+                    </div>
+                </div>
+                
+                <div class="footer-center">
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-facebook"></i>
+                            <span>Facebook</span>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                            <span>Instagram</span>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-vk"></i>
+                            <span>VKontakte</span>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                            <span>Twitter</span>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-youtube"></i>
+                            <span>YouTube</span>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-telegram"></i>
+                            <span>Telegram</span>
+                        </a>
+                    </div>
+                    <div class="company-info">
+                        <p>TOO King Salute, 12-й микрорайон 7/2 с. Алматы, Индекс 050035</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <div class="floating-whatsapp">
+        <i class="fab fa-whatsapp"></i>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
