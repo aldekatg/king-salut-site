@@ -407,7 +407,6 @@ button:active,
 .product-image img:not([src]),
 .product-image img[src=""],
 .product-image img[src*="error"] {
-  background: linear-gradient(135deg, #8b5cf6, #4c1d95);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -419,7 +418,7 @@ button:active,
 .product-image img:not([src])::after,
 .product-image img[src=""]::after,
 .product-image img[src*="error"]::after {
-  content: "VIP ХАН";
+  content: "Изображение недоступно";
   position: absolute;
   top: 50%;
   left: 50%;

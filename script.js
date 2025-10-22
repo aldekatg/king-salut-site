@@ -302,14 +302,6 @@ document.querySelectorAll(".product-card").forEach((card) => {
   });
 });
 
-// Add click handlers for buttons
-document.querySelectorAll(".btn-buy").forEach((btn) => {
-  btn.addEventListener("click", function (e) {
-    e.preventDefault();
-    alert("Товар добавлен в корзину!");
-  });
-});
-
 document.querySelectorAll(".btn-whatsapp").forEach((btn) => {
   btn.addEventListener("click", function (e) {
     e.preventDefault();
@@ -430,7 +422,6 @@ document.addEventListener("DOMContentLoaded", function () {
     img.addEventListener("error", function () {
       console.log("Ошибка загрузки изображения:", this.src);
       // Создаем fallback изображение
-      this.style.background = "linear-gradient(135deg, #8B5CF6, #4C1D95)";
       this.style.color = "white";
       this.style.display = "flex";
       this.style.alignItems = "center";
