@@ -139,9 +139,57 @@ function renderProducts() {
 function addToCart(productId) {
   const product = productsData.find((p) => p.id === productId);
   if (product) {
-    alert(`Товар "${product.name}" добавлен в корзину!`);
-    console.log("Добавлен в корзину:", product);
+    showCartModal(product);
   }
+}
+
+// Функция показа модального окна корзины
+function showCartModal(product) {
+  const modal = document.getElementById("cartModal");
+  const cartItemImage = document.getElementById("cartItemImage");
+  const cartItemName = document.getElementById("cartItemName");
+  const cartItemPrice = document.getElementById("cartItemPrice");
+  const cartItemQuantity = document.getElementById("cartItemQuantity");
+  const cartItemTotal = document.getElementById("cartItemTotal");
+
+  // Заполняем данные товара
+  cartItemImage.src = product.image;
+  cartItemImage.alt = product.name;
+  cartItemName.textContent = product.name;
+  cartItemPrice.textContent = product.currentPrice + " ₸";
+  cartItemQuantity.value = 1;
+  cartItemTotal.textContent = product.currentPrice + " ₸";
+
+  // Показываем модальное окно
+  modal.classList.add("show");
+  document.body.style.overflow = "hidden";
+
+  // Обработчики для кнопок количества
+  const minusBtn = document.querySelector(".quantity-btn.minus");
+  const plusBtn = document.querySelector(".quantity-btn.plus");
+
+  function updateTotal() {
+    const quantity = parseInt(cartItemQuantity.value);
+    const price = parseInt(product.currentPrice.replace(/\s/g, ""));
+    const total = quantity * price;
+    cartItemTotal.textContent = total.toLocaleString() + " ₸";
+  }
+
+  minusBtn.onclick = () => {
+    if (cartItemQuantity.value > 1) {
+      cartItemQuantity.value = parseInt(cartItemQuantity.value) - 1;
+      updateTotal();
+    }
+  };
+
+  plusBtn.onclick = () => {
+    if (cartItemQuantity.value < 99) {
+      cartItemQuantity.value = parseInt(cartItemQuantity.value) + 1;
+      updateTotal();
+    }
+  };
+
+  cartItemQuantity.onchange = updateTotal;
 }
 
 // Функция заказа через WhatsApp
@@ -161,6 +209,47 @@ function orderViaWhatsApp(productId) {
 document.addEventListener("DOMContentLoaded", function () {
   // Рендерим товары при загрузке страницы
   renderProducts();
+
+  // Обработчики модального окна корзины
+  const modal = document.getElementById("cartModal");
+  const closeBtn = document.querySelector(".close");
+  const continueShoppingBtn = document.querySelector(".continue-shopping");
+  const checkoutBtn = document.querySelector(".btn-checkout");
+
+  // Закрытие модального окна
+  function closeModal() {
+    modal.classList.remove("show");
+    document.body.style.overflow = "auto";
+  }
+
+  closeBtn.addEventListener("click", closeModal);
+  continueShoppingBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    closeModal();
+  });
+
+  // Закрытие при клике вне модального окна
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      closeModal();
+    }
+  });
+
+  // Обработка оформления заказа
+  checkoutBtn.addEventListener("click", () => {
+    const productName = document.getElementById("cartItemName").textContent;
+    const quantity = document.getElementById("cartItemQuantity").value;
+    const total = document.getElementById("cartItemTotal").textContent;
+
+    const phoneNumber = "77764567868";
+    const message = `Здравствуйте! Хочу оформить заказ:\nТовар: ${productName}\nКоличество: ${quantity} шт.\nСумма: ${total}`;
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+      message
+    )}`;
+
+    window.open(whatsappUrl, "_blank");
+    closeModal();
+  });
 
   const faqItems = document.querySelectorAll(".faq-item");
 

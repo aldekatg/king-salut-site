@@ -327,6 +327,58 @@
       <i class="fab fa-whatsapp"></i>
     </div>
 
+    <!-- Cart Modal -->
+    <div id="cartModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="modal-header-title">
+            <h3>Ваши товары:</h3>
+          </span>
+          <span class="close">
+            <img src="images/icons/close.svg" alt="Close" />
+          </span>
+        </div>
+        <div class="modal-body">
+          <div class="cart-item">
+            <div class="cart-item-image">
+              <img id="cartItemImage" src="" alt="" />
+            </div>
+            <div class="cart-item-details">
+              <h3 id="cartItemName"></h3>
+              <div class="cart-item-info">
+                <div class="info-row">
+                  <span class="label">Цена</span>
+                  <span class="label">Кол-во</span>
+                  <span class="label">Сумма</span>
+                </div>
+                <div class="info-row">
+                  <span id="cartItemPrice" class="price"></span>
+                  <div class="quantity-controls">
+                    <button class="quantity-btn minus">-</button>
+                    <input
+                      type="number"
+                      id="cartItemQuantity"
+                      value="1"
+                      min="1"
+                      max="99"
+                    />
+                    <button class="quantity-btn plus">+</button>
+                  </div>
+                  <span id="cartItemTotal" class="total"></span>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-primary btn-checkout">
+                  Оформить заказ
+                </button>
+                <a href="#" class="continue-shopping">Продолжить покупки</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script src="script.js"></script>
   </body>
 </html>
