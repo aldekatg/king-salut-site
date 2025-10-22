@@ -210,6 +210,42 @@ document.addEventListener("DOMContentLoaded", function () {
   // Рендерим товары при загрузке страницы
   renderProducts();
 
+  // Mobile Menu functionality
+  const mobileMenuToggle = document.querySelector(".mobile-menu-toggle");
+  const mobileMenu = document.querySelector(".mobile-menu");
+  const mobileMenuOverlay = document.querySelector(".mobile-menu-overlay");
+
+  function toggleMobileMenu() {
+    mobileMenuToggle.classList.toggle("active");
+    mobileMenu.classList.toggle("active");
+    mobileMenuOverlay.classList.toggle("active");
+    document.body.style.overflow = mobileMenu.classList.contains("active")
+      ? "hidden"
+      : "auto";
+  }
+
+  function closeMobileMenu() {
+    mobileMenuToggle.classList.remove("active");
+    mobileMenu.classList.remove("active");
+    mobileMenuOverlay.classList.remove("active");
+    document.body.style.overflow = "auto";
+  }
+
+  // Event listeners for mobile menu
+  if (mobileMenuToggle) {
+    mobileMenuToggle.addEventListener("click", toggleMobileMenu);
+  }
+
+  if (mobileMenuOverlay) {
+    mobileMenuOverlay.addEventListener("click", closeMobileMenu);
+  }
+
+  // Close mobile menu when clicking on nav links
+  const mobileNavLinks = document.querySelectorAll(".mobile-menu .nav-link");
+  mobileNavLinks.forEach((link) => {
+    link.addEventListener("click", closeMobileMenu);
+  });
+
   // Обработчики модального окна корзины
   const modal = document.getElementById("cartModal");
   const closeBtn = document.querySelector(".close");
