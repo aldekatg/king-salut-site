@@ -994,6 +994,26 @@ button:active,
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .hero-title {
+    font-size: 32px;
+    line-height: 120%;
+    letter-spacing: -0.02em;
+  }
+
+  .hero-stats {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .stat-divider {
+    width: 60px;
+    height: 1px;
+    opacity: 0.2;
+  }
+
   .btn {
     max-width: 100%;
   }
@@ -1160,6 +1180,25 @@ button:active,
 }
 
 @media (max-width: 480px) {
+  .hero-title {
+    font-size: 32px;
+    line-height: 120%;
+    letter-spacing: -0.02em;
+  }
+
+  .hero-stats {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .stat-divider {
+    width: 60px;
+    height: 1px;
+    opacity: 0.2;
+  }
   .btn {
     max-width: 100%;
   }
