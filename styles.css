@@ -1464,6 +1464,10 @@ button:active,
     line-height: 120%;
   }
 
+  .faq-item.active .faq-answer {
+    padding: 0 15px 15px 15px;
+  }
+
   .faq-answer p {
     font-size: 16px;
     line-height: 24px;
