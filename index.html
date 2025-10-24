@@ -18,6 +18,7 @@
     <meta name="format-detection" content="telephone=no" />
     <meta name="theme-color" content="#000000" />
     <link rel="stylesheet" href="styles.css" />
+    <script src="modules-standalone.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -37,84 +38,8 @@
     /></noscript>
   </head>
   <body>
-    <!-- Header -->
-    <header class="header">
-      <!-- Top Black Bar -->
-      <div class="header-top">
-        <div class="container">
-          <div class="header-top-content">
-            <!-- Logo -->
-            <div class="logo">
-              <!-- Можно использовать иконку или изображение -->
-              <img
-                src="images/icons/crown-icon.svg"
-                alt="Crown"
-                class="logo-icon"
-              />
-            </div>
-
-            <!-- Contact -->
-            <div class="contact">
-              <i class="fas fa-phone"></i>
-              <span>+7 (776) 456 78 68</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Bottom White Bar -->
-      <div class="header-bottom">
-        <div class="container">
-          <div class="header-bottom-content">
-            <!-- Mobile Menu Toggle -->
-            <button class="mobile-menu-toggle">
-              <span></span>
-              <span></span>
-              <span></span>
-            </button>
-
-            <!-- Navigation -->
-            <nav class="nav">
-              <a href="#" class="nav-link">Главная</a>
-              <a href="#" class="nav-link dropdown">
-                Каталог
-                <i class="fas fa-chevron-down"></i>
-              </a>
-              <a href="#" class="nav-link">По событиям</a>
-              <a href="#" class="nav-link">Доставка и оплата</a>
-              <a href="#" class="nav-link">О компании</a>
-            </nav>
-
-            <!-- Search -->
-            <div class="search">
-              <input type="text" placeholder="Поиск по 1789 товаров" />
-              <i class="fas fa-search"></i>
-            </div>
-
-            <!-- Icons -->
-            <div class="icons">
-              <i class="fas fa-shopping-cart"></i>
-              <i class="fas fa-balance-scale"></i>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Mobile Menu -->
-      <div class="mobile-menu-overlay"></div>
-      <div class="mobile-menu">
-        <nav class="nav">
-          <a href="#" class="nav-link">Главная</a>
-          <a href="#" class="nav-link dropdown">
-            Каталог
-            <i class="fas fa-chevron-down"></i>
-          </a>
-          <a href="#" class="nav-link">По событиям</a>
-          <a href="#" class="nav-link">Доставка и оплата</a>
-          <a href="#" class="nav-link">О компании</a>
-        </nav>
-      </div>
-    </header>
+    <!-- Header будет загружен через модульную систему -->
+    <div id="header-container"></div>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -306,56 +231,8 @@
       </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="container">
-        <div class="footer-content">
-          <div class="footer-left">
-            <div class="logo">
-              <img
-                src="images/icons/logo-vert.png"
-                alt="Logo Vertical"
-                class="logo-icon-footer"
-              />
-            </div>
-          </div>
-
-          <div class="footer-center">
-            <div class="social-links">
-              <a href="#" class="social-link">
-                <i class="fab fa-facebook"></i>
-                <span>Facebook</span>
-              </a>
-              <a href="#" class="social-link">
-                <i class="fab fa-instagram"></i>
-                <span>Instagram</span>
-              </a>
-              <a href="#" class="social-link">
-                <i class="fab fa-vk"></i>
-                <span>VKontakte</span>
-              </a>
-              <a href="#" class="social-link">
-                <i class="fab fa-twitter"></i>
-                <span>Twitter</span>
-              </a>
-              <a href="#" class="social-link">
-                <i class="fab fa-youtube"></i>
-                <span>YouTube</span>
-              </a>
-              <a href="#" class="social-link">
-                <i class="fab fa-telegram"></i>
-                <span>Telegram</span>
-              </a>
-            </div>
-            <div class="company-info">
-              <p>
-                TOO King Salute, 12-й микрорайон 7/2 с. Алматы, Индекс 050035
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
+    <!-- Footer будет загружен через модульную систему -->
+    <div id="footer-container"></div>
 
     <!-- Floating WhatsApp Button -->
     <div class="floating-whatsapp">
@@ -404,7 +281,7 @@
               </div>
               <div class="modal-footer">
                 <button class="btn btn-primary btn-checkout">
-                  Оформить заказ
+                  Перейти в корзину
                 </button>
                 <a href="#" class="continue-shopping">Продолжить покупки</a>
               </div>
@@ -414,6 +291,7 @@
       </div>
     </div>
 
+    <script src="modules-standalone.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

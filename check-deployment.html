@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Проверка готовности к деплою</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background: #f5f5f5; }
+        .container { max-width: 800px; margin: 0 auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .check-item { margin: 10px 0; padding: 10px; border-radius: 4px; }
+        .success { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .error { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+        .warning { background: #fff3cd; color: #856404; border: 1px solid #ffeaa7; }
+        .info { background: #d1ecf1; color: #0c5460; border: 1px solid #bee5eb; }
+        h1 { color: #333; text-align: center; }
+        h2 { color: #666; border-bottom: 2px solid #eee; padding-bottom: 10px; }
+        .file-list { background: #f8f9fa; padding: 15px; border-radius: 4px; margin: 10px 0; }
+        .file-list li { margin: 5px 0; }
+        .status { font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔍 Проверка готовности к деплою</h1>
+        
+        <h2>📁 Структура файлов</h2>
+        <div id="file-structure">
+            <div class="check-item info">
+                <span class="status">Проверяем файлы...</span>
+            </div>
+        </div>
+
+        <h2>🔧 Модульная система</h2>
+        <div id="module-system">
+            <div class="check-item info">
+                <span class="status">Проверяем модули...</span>
+            </div>
+        </div>
+
+        <h2>📊 Результат проверки</h2>
+        <div id="summary">
+            <div class="check-item info">
+                <span class="status">Ожидаем результаты...</span>
+            </div>
+        </div>
+
+        <h2>📋 Список файлов для деплоя</h2>
+        <div class="file-list">
+            <h3>Обязательные файлы:</h3>
+            <ul>
+                <li>index.html</li>
+                <li>header.html</li>
+                <li>footer.html</li>
+                <li>modules.js</li>
+                <li>script.js</li>
+                <li>styles.css</li>
+                <li>.htaccess</li>
+            </ul>
+            
+            <h3>Папки:</h3>
+            <ul>
+                <li>images/ (со всеми подпапками и файлами)</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Проверка готовности к деплою
+        class DeploymentChecker {
+            constructor() {
+                this.checks = {
+                    files: [],
+                    modules: [],
+                    summary: []
+                };
+                this.runChecks();
+            }
+
+            async runChecks() {
+                await this.checkFiles();
+                await this.checkModules();
+                this.generateSummary();
+                this.displayResults();
+            }
+
+            async checkFiles() {
+                const requiredFiles = [
+                    'index.html',
+                    'header.html', 
+                    'footer.html',
+                    'modules.js',
+                    'script.js',
+                    'styles.css',
+                    '.htaccess'
+                ];
+
+                for (const file of requiredFiles) {
+                    try {
+                        const response = await fetch(file, { method: 'HEAD' });
+                        if (response.ok) {
+                            this.checks.files.push({
+                                name: file,
+                                status: 'success',
+                                message: 'Файл найден'
+                            });
+                        } else {
+                            this.checks.files.push({
+                                name: file,
+                                status: 'error',
+                                message: `Ошибка ${response.status}`
+                            });
+                        }
+                    } catch (error) {
+                        this.checks.files.push({
+                            name: file,
+                            status: 'error',
+                            message: 'Файл не найден'
+                        });
+                    }
+                }
+            }
+
+            async checkModules() {
+                // Проверяем, что модульная система работает
+                try {
+                    const headerResponse = await fetch('header.html');
+                    const footerResponse = await fetch('footer.html');
+                    
+                    if (headerResponse.ok) {
+                        this.checks.modules.push({
+                            name: 'header.html',
+                            status: 'success',
+                            message: 'Модуль header доступен'
+                        });
+                    } else {
+                        this.checks.modules.push({
+                            name: 'header.html',
+                            status: 'error',
+                            message: 'Модуль header недоступен'
+                        });
+                    }
+
+                    if (footerResponse.ok) {
+                        this.checks.modules.push({
+                            name: 'footer.html',
+                            status: 'success',
+                            message: 'Модуль footer доступен'
+                        });
+                    } else {
+                        this.checks.modules.push({
+                            name: 'footer.html',
+                            status: 'error',
+                            message: 'Модуль footer недоступен'
+                        });
+                    }
+                } catch (error) {
+                    this.checks.modules.push({
+                        name: 'modules',
+                        status: 'error',
+                        message: 'Ошибка проверки модулей'
+                    });
+                }
+            }
+
+            generateSummary() {
+                const allChecks = [...this.checks.files, ...this.checks.modules];
+                const successCount = allChecks.filter(check => check.status === 'success').length;
+                const errorCount = allChecks.filter(check => check.status === 'error').length;
+                const totalCount = allChecks.length;
+
+                this.checks.summary = [{
+                    name: 'Общий статус',
+                    status: errorCount === 0 ? 'success' : 'warning',
+                    message: `${successCount}/${totalCount} проверок пройдено`
+                }];
+
+                if (errorCount > 0) {
+                    this.checks.summary.push({
+                        name: 'Внимание',
+                        status: 'error',
+                        message: `Найдено ${errorCount} ошибок. Исправьте их перед деплоем.`
+                    });
+                } else {
+                    this.checks.summary.push({
+                        name: 'Готовность',
+                        status: 'success',
+                        message: 'Сайт готов к деплою!'
+                    });
+                }
+            }
+
+            displayResults() {
+                this.displaySection('file-structure', this.checks.files);
+                this.displaySection('module-system', this.checks.modules);
+                this.displaySection('summary', this.checks.summary);
+            }
+
+            displaySection(containerId, checks) {
+                const container = document.getElementById(containerId);
+                container.innerHTML = '';
+
+                checks.forEach(check => {
+                    const div = document.createElement('div');
+                    div.className = `check-item ${check.status}`;
+                    div.innerHTML = `
+                        <span class="status">${check.name}:</span> ${check.message}
+                    `;
+                    container.appendChild(div);
+                });
+            }
+        }
+
+        // Запускаем проверку
+        document.addEventListener('DOMContentLoaded', () => {
+            new DeploymentChecker();
+        });
+    </script>
+</body>
+</html>

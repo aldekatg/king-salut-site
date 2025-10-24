@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="images/icons/favicon.png" />
+    <title>Корзина - KING SALUT</title>
+    <meta name="description" content="Оформление заказа салютов и фейерверков - KING SALUT" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="cart-styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" /></noscript>
+</head>
+<body>
+    <!-- Header будет загружен через модульную систему -->
+    <div id="header-container"></div>
+
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs">
+        <div class="container">
+            <a href="index.html">Главная</a>
+            <span class="separator">></span>
+            <span class="current">Корзина</span>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="cart-page">
+        <div class="container">
+            <div class="cart-layout">
+                <!-- Left Side - Order Form -->
+                <div class="order-form-section">
+                    <h1 class="page-title">Оформление заказа</h1>
+                    
+                    <!-- Personal Information -->
+                    <div class="form-section">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="text" id="firstName" name="firstName" placeholder="Имя" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="lastName" name="lastName" placeholder="Фамилия" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="tel" id="phone" name="phone" placeholder="Номер телефона" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="email" name="email" placeholder="Email">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="address" name="address" placeholder="Адрес" required>
+                        </div>
+                        <div class="form-group" style="margin-top: 15px;">
+                            <textarea id="comment" name="comment" rows="4" placeholder="Комментарий к заказу"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Order Button -->
+                    <button class="btn btn-order" id="placeOrderBtn">
+                        Оформить заказ
+                    </button>
+                </div>
+
+                <!-- Right Side - Cart Items -->
+                <div class="cart-items-section">
+                    <div class="cart-header">
+                        <h2 class="section-title">Ваши товары</h2>
+                    </div>
+
+                    <!-- Cart Items -->
+                    <div class="cart-items" id="cartItems">
+                        <!-- Items will be loaded dynamically -->
+                    </div>
+
+                    <!-- Order Summary -->
+                    <div class="order-summary">
+                        <div class="summary-row">
+                            <span class="summary-label">Сумма заказа:</span>
+                            <span class="summary-value" id="orderTotal">18 000 тг</span>
+                        </div>
+                        <div class="summary-row">
+                            <span class="summary-label">Доставка (отдельно):</span>
+                            <span class="summary-value" id="deliveryCost">Бесплатно</span>
+                        </div>
+                        <div class="summary-row total">
+                            <span class="summary-label">Итого:</span>
+                            <span class="summary-value" id="finalTotal">100 000 тг</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer будет загружен через модульную систему -->
+    <div id="footer-container"></div>
+
+    <script src="modules-standalone.js"></script>
+    <script src="cart.js"></script>
+</body>
+</html>

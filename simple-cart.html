@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Корзина - KING SALUT</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="cart-styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" /></noscript>
+</head>
+<body>
+    <!-- Простой header -->
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-top-content">
+                    <div class="logo">
+                        <img src="images/icons/crown-icon.svg" alt="Crown" class="logo-icon" />
+                    </div>
+                    <div class="contact">
+                        <i class="fas fa-phone"></i>
+                        <span>+7 (776) 456 78 68</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-bottom">
+            <div class="container">
+                <div class="header-bottom-content">
+                    <nav class="nav">
+                        <a href="index.html" class="nav-link">Главная</a>
+                        <a href="#" class="nav-link">Каталог</a>
+                        <a href="#" class="nav-link">По событиям</a>
+                        <a href="#" class="nav-link">Доставка и оплата</a>
+                        <a href="#" class="nav-link">О компании</a>
+                    </nav>
+                    <div class="search">
+                        <input type="text" placeholder="Поиск по 1789 товаров" />
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="icons">
+                        <a href="cart.html" class="cart-link" title="Корзина">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count" id="cartCount">0</span>
+                        </a>
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs">
+        <div class="container">
+            <a href="index.html">Главная</a>
+            <span class="separator">></span>
+            <span class="current">Корзина</span>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="cart-page">
+        <div class="container">
+            <div class="cart-layout">
+                <!-- Left Side - Order Form -->
+                <div class="order-form-section">
+                    <h1 class="page-title">Оформление заказа</h1>
+                    
+                    <!-- Personal Information -->
+                    <div class="form-section">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">Имя</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Фамилия</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">Номер телефона</label>
+                                <input type="tel" id="phone" name="phone" placeholder="+7 (___) ___-__-__" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Адрес</label>
+                            <input type="text" id="address" name="address" placeholder="Укажите полный адрес доставки" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="comment">Комментарий к заказу</label>
+                            <textarea id="comment" name="comment" rows="4" placeholder="Дополнительная информация к заказу"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Delivery Method -->
+                    <div class="form-section">
+                        <h2 class="section-title">Способ доставки</h2>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="delivery" value="courier" checked>
+                                <span class="radio-custom"></span>
+                                <div class="radio-content">
+                                    <div class="radio-title">Доставка курьером</div>
+                                    <div class="radio-price">2 200 тг</div>
+                                    <div class="radio-note">Оплачивается отдельно</div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Payment Method -->
+                    <div class="form-section">
+                        <h2 class="section-title">Способ оплаты</h2>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="payment" value="kaspi" checked>
+                                <span class="radio-custom"></span>
+                                <div class="radio-content">
+                                    <div class="radio-title">Оплата Kaspi QR и Kaspi Red</div>
+                                    <div class="radio-price">14 000 тг</div>
+                                    <div class="radio-note">Оплата производится при получении товара курьеру наличными либо Kaspi QR и Kaspi Red</div>
+                                </div>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="payment" value="cash">
+                                <span class="radio-custom"></span>
+                                <div class="radio-content">
+                                    <div class="radio-title">Оплата наличными курьеру</div>
+                                    <div class="radio-price">14 000 тг</div>
+                                    <div class="payment-info">
+                                        <p>Если вы не хотите предварительно оплачивать заказ, у вас есть возможность рассчитаться с курьером наличными в момент получения посылки. Чтобы процесс был максимально комфортным и для вас, и для курьера, рекомендуем заранее подготовить нужную сумму.</p>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Order Button -->
+                    <button class="btn btn-order" id="placeOrderBtn">
+                        Оформить заказ
+                    </button>
+                </div>
+
+                <!-- Right Side - Cart Items -->
+                <div class="cart-items-section">
+                    <div class="cart-header">
+                        <h2 class="section-title">Ваши товары</h2>
+                        <div class="user-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                    </div>
+
+                    <!-- Cart Items -->
+                    <div class="cart-items" id="cartItems">
+                        <!-- Items will be loaded dynamically -->
+                    </div>
+
+                    <!-- Order Summary -->
+                    <div class="order-summary">
+                        <div class="summary-row">
+                            <span class="summary-label">Сумма заказа:</span>
+                            <span class="summary-value" id="orderTotal">0 тг</span>
+                        </div>
+                        <div class="summary-row">
+                            <span class="summary-label">Доставка (отдельно):</span>
+                            <span class="summary-value" id="deliveryCost">2 200 тг</span>
+                        </div>
+                        <div class="summary-row total">
+                            <span class="summary-label">Итого:</span>
+                            <span class="summary-value" id="finalTotal">2 200 тг</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Simple Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <div class="logo">
+                        <img src="images/icons/logo-vert.png" alt="Logo Vertical" class="logo-icon-footer" />
+                    </div>
+                </div>
+                <div class="footer-center">
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-facebook"></i>
+                            <span>Facebook</span>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                            <span>Instagram</span>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-vk"></i>
+                            <span>VKontakte</span>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                            <span>Twitter</span>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-youtube"></i>
+                            <span>YouTube</span>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-telegram"></i>
+                            <span>Telegram</span>
+                        </a>
+                    </div>
+                    <div class="company-info">
+                        <p>TOO King Salute, 12-й микрорайон 7/2 с. Алматы, Индекс 050035</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Простая система корзины
+        class SimpleCartManager {
+            constructor() {
+                this.cartItems = this.loadCartFromStorage();
+                this.deliveryCost = 2200;
+                this.couponDiscount = 0;
+                this.init();
+            }
+
+            loadCartFromStorage() {
+                const savedCart = localStorage.getItem('kingSalutCart');
+                return savedCart ? JSON.parse(savedCart) : [];
+            }
+
+            init() {
+                this.renderCartItems();
+                this.updateOrderSummary();
+                this.bindEvents();
+                this.updateCartCount();
+            }
+
+            renderCartItems() {
+                const cartItemsContainer = document.getElementById('cartItems');
+                if (!cartItemsContainer) return;
+
+                if (this.cartItems.length === 0) {
+                    cartItemsContainer.innerHTML = `
+                        <div class="empty-cart">
+                            <i class="fas fa-shopping-cart" style="font-size: 48px; color: #ccc; margin-bottom: 20px;"></i>
+                            <p style="color: #666; text-align: center;">Ваша корзина пуста</p>
+                        </div>
+                    `;
+                    return;
+                }
+
+                cartItemsContainer.innerHTML = this.cartItems.map(item => `
+                    <div class="cart-item" data-id="${item.id}">
+                        <div class="cart-item-image">
+                            <img src="${item.image}" alt="${item.name}" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div style="display: none; width: 100%; height: 100%; align-items: center; justify-content: center; color: #999; font-size: 20px;">
+                                <i class="fas fa-image"></i>
+                            </div>
+                        </div>
+                        <div class="cart-item-details">
+                            <div class="cart-item-name">${item.name}</div>
+                            <div class="cart-item-info">
+                                <div class="cart-item-price">${this.formatPrice(item.price)} тг</div>
+                                <div class="quantity-controls">
+                                    <button class="quantity-btn minus" onclick="simpleCart.updateQuantity(${item.id}, -1)">-</button>
+                                    <input type="number" class="quantity-input" value="${item.quantity}" min="1" max="99" 
+                                           onchange="simpleCart.setQuantity(${item.id}, this.value)">
+                                    <button class="quantity-btn plus" onclick="simpleCart.updateQuantity(${item.id}, 1)">+</button>
+                                </div>
+                                <div class="cart-item-total">${this.formatPrice(item.price * item.quantity)} тг</div>
+                            </div>
+                        </div>
+                        <div class="cart-item-remove" onclick="simpleCart.removeItem(${item.id})">
+                            <i class="fas fa-times"></i>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            updateQuantity(itemId, change) {
+                const item = this.cartItems.find(item => item.id === itemId);
+                if (item) {
+                    item.quantity = Math.max(1, Math.min(99, item.quantity + change));
+                    this.saveCartToStorage();
+                    this.renderCartItems();
+                    this.updateOrderSummary();
+                    this.updateCartCount();
+                }
+            }
+
+            setQuantity(itemId, quantity) {
+                const item = this.cartItems.find(item => item.id === itemId);
+                if (item) {
+                    item.quantity = Math.max(1, Math.min(99, parseInt(quantity) || 1));
+                    this.saveCartToStorage();
+                    this.renderCartItems();
+                    this.updateOrderSummary();
+                    this.updateCartCount();
+                }
+            }
+
+            removeItem(itemId) {
+                this.cartItems = this.cartItems.filter(item => item.id !== itemId);
+                this.saveCartToStorage();
+                this.renderCartItems();
+                this.updateOrderSummary();
+                this.updateCartCount();
+            }
+
+            updateOrderSummary() {
+                const orderTotal = this.cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+                const finalTotal = orderTotal + this.deliveryCost - this.couponDiscount;
+
+                document.getElementById('orderTotal').textContent = this.formatPrice(orderTotal) + ' тг';
+                document.getElementById('deliveryCost').textContent = this.deliveryCost > 0 ? this.formatPrice(this.deliveryCost) + ' тг' : 'Бесплатно';
+                document.getElementById('finalTotal').textContent = this.formatPrice(finalTotal) + ' тг';
+            }
+
+            formatPrice(price) {
+                return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+            }
+
+            saveCartToStorage() {
+                localStorage.setItem('kingSalutCart', JSON.stringify(this.cartItems));
+            }
+
+            updateCartCount() {
+                const cartCount = document.getElementById('cartCount');
+                if (cartCount) {
+                    const totalItems = this.cartItems.reduce((sum, item) => sum + item.quantity, 0);
+                    cartCount.textContent = totalItems;
+                    cartCount.style.display = totalItems > 0 ? 'flex' : 'none';
+                }
+            }
+
+            bindEvents() {
+                // Coupon application
+                const applyCouponBtn = document.getElementById('applyCouponBtn');
+                if (applyCouponBtn) {
+                    applyCouponBtn.addEventListener('click', () => this.applyCoupon());
+                }
+
+                // Order placement
+                const placeOrderBtn = document.getElementById('placeOrderBtn');
+                if (placeOrderBtn) {
+                    placeOrderBtn.addEventListener('click', () => this.placeOrder());
+                }
+            }
+
+            applyCoupon() {
+                const couponCode = document.getElementById('couponCode').value.trim();
+                
+                if (!couponCode) {
+                    alert('Введите код купона');
+                    return;
+                }
+
+                const validCoupons = {
+                    'SALUT10': 0.1,
+                    'NEWYEAR20': 0.2,
+                    'WELCOME15': 0.15
+                };
+
+                if (validCoupons[couponCode.toUpperCase()]) {
+                    const orderTotal = this.cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+                    this.couponDiscount = Math.floor(orderTotal * validCoupons[couponCode.toUpperCase()]);
+                    this.updateOrderSummary();
+                    alert(`Купон применен! Скидка: ${this.formatPrice(this.couponDiscount)} тг`);
+                } else {
+                    alert('Неверный код купона');
+                }
+            }
+
+            placeOrder() {
+                if (this.cartItems.length === 0) {
+                    alert('Ваша корзина пуста');
+                    return;
+                }
+
+                alert('Заказ успешно оформлен! Мы свяжемся с вами в ближайшее время.');
+                
+                // Reset cart
+                this.cartItems = [];
+                this.couponDiscount = 0;
+                this.saveCartToStorage();
+                this.renderCartItems();
+                this.updateOrderSummary();
+                this.updateCartCount();
+            }
+        }
+
+        // Initialize cart
+        let simpleCart;
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('Simple cart page loaded');
+            simpleCart = new SimpleCartManager();
+        });
+    </script>
+</body>
+</html>

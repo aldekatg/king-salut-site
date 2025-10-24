@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="images/icons/favicon.png" />
+    <title>KING SALUT - Яркие салюты и фейерверки с доставкой</title>
+    <meta name="description" content="KING SALUT - Яркие салюты и фейерверки с доставкой" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" /></noscript>
+</head>
+<body>
+    <!-- Простой header -->
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-top-content">
+                    <div class="logo">
+                        <img src="images/icons/crown-icon.svg" alt="Crown" class="logo-icon" />
+                    </div>
+                    <div class="contact">
+                        <i class="fas fa-phone"></i>
+                        <span>+7 (776) 456 78 68</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-bottom">
+            <div class="container">
+                <div class="header-bottom-content">
+                    <nav class="nav">
+                        <a href="#" class="nav-link">Главная</a>
+                        <a href="#" class="nav-link">Каталог</a>
+                        <a href="#" class="nav-link">По событиям</a>
+                        <a href="#" class="nav-link">Доставка и оплата</a>
+                        <a href="#" class="nav-link">О компании</a>
+                    </nav>
+                    <div class="search">
+                        <input type="text" placeholder="Поиск по 1789 товаров" />
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="icons">
+                        <a href="#" class="cart-link" title="Корзина" id="cartLink">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count" id="cartCount">0</span>
+                        </a>
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container-hero">
+            <div class="hero-content">
+                <h1 class="hero-title">Яркие салюты и фейерверки с доставкой</h1>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-number">200,000+</div>
+                        <div class="stat-label">Довольных клиентов</div>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat">
+                        <div class="stat-number">130+</div>
+                        <div class="stat-label">Заказов в день</div>
+                    </div>
+                </div>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary">Выбрать набор к празднику</button>
+                    <button class="btn btn-success">
+                        <i class="fab fa-whatsapp"></i>
+                        Заказать звонок
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Category Filters -->
+    <section class="categories">
+        <div class="container">
+            <div class="category-filters">
+                <div class="category-filter">
+                    <span class="category-icon">🔥</span>
+                    <span>Салюты от 5 000 до 25 000 тг</span>
+                </div>
+                <div class="category-filter">
+                    <span class="category-icon">🔥</span>
+                    <span>Салюты от 25 000 - 50 000 тг</span>
+                </div>
+                <div class="category-filter">
+                    <span class="category-icon">🔥</span>
+                    <span>Салюты от 50 000 до 100 000 тг</span>
+                </div>
+                <div class="category-filter">
+                    <span class="category-icon">🔥</span>
+                    <span>Салюты от 100 000 и выше</span>
+                </div>
+                <div class="category-filter">
+                    <span class="category-icon">🎄</span>
+                    <span>Новогодние салюты</span>
+                </div>
+                <div class="category-filter">
+                    <span class="category-icon">👑</span>
+                    <span>VIP салюты</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Arrivals -->
+    <section class="products-section">
+        <div class="container">
+            <h2 class="section-title">Новинки</h2>
+            <div class="products-grid" id="new-products">
+                <!-- Товары будут добавлены через JavaScript -->
+            </div>
+            <button class="btn btn-show-all">Показать все</button>
+        </div>
+    </section>
+
+    <!-- Top Sales -->
+    <section class="products-section">
+        <div class="container">
+            <h2 class="section-title">Топ продаж</h2>
+            <div class="products-grid" id="top-products">
+                <!-- Товары будут добавлены через JavaScript -->
+            </div>
+            <button class="btn btn-show-all">Показать все</button>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Частые вопросы</h2>
+            <div class="faq-list">
+                <div class="faq-item active">
+                    <div class="faq-question">
+                        <h3>Как купить красивые салюты и фейерверки в Алматы, Казахстане</h3>
+                        <div class="icon-container">
+                            <i class="fas fa-minus"></i>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>У нас на сайте вы можете купить онлайн самые красивые наземные салюты и фейерверки крупного и мелкого калибра по выгодной цене с доставкой.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Simple Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <div class="logo">
+                        <img src="images/icons/logo-vert.png" alt="Logo Vertical" class="logo-icon-footer" />
+                    </div>
+                </div>
+                <div class="footer-center">
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-facebook"></i>
+                            <span>Facebook</span>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                            <span>Instagram</span>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-vk"></i>
+                            <span>VKontakte</span>
+                        </a>
+                    </div>
+                    <div class="company-info">
+                        <p>TOO King Salute, 12-й микрорайон 7/2 с. Алматы, Индекс 050035</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <div class="floating-whatsapp">
+        <i class="fab fa-whatsapp"></i>
+    </div>
+
+    <script>
+        // Данные товаров
+        const productsData = [
+            {
+                id: 1,
+                name: "Салют VIP ХАН 188 зарядов",
+                image: "images/products/salyut-vip-1.jpg",
+                currentPrice: "14 000",
+                oldPrice: "18 000",
+                discount: "-20%",
+                badge: "Топ продаж",
+                category: "new",
+            },
+            {
+                id: 2,
+                name: "Салют КАРНАВАЛЬНАЯ НОЧЬ 120 зарядов",
+                image: "images/products/salyut-vip-1.jpg",
+                currentPrice: "12 500",
+                oldPrice: "15 000",
+                discount: "-17%",
+                badge: "Топ продаж",
+                category: "new",
+            },
+            {
+                id: 3,
+                name: "Салют НОВОГОДНИЙ 96 зарядов",
+                image: "images/products/salyut-vip-1.jpg",
+                currentPrice: "9 800",
+                oldPrice: "12 000",
+                discount: "-18%",
+                badge: "Топ продаж",
+                category: "top",
+            },
+            {
+                id: 4,
+                name: "Салют Звезда/Жулдыз 19 зарядов",
+                image: "images/products/salyut-vip-1.jpg",
+                currentPrice: "14 000",
+                oldPrice: "18 000",
+                discount: "-20%",
+                badge: "Топ продаж",
+                category: "top",
+            }
+        ];
+
+        // Функция создания карточки товара
+        function createProductCard(product) {
+            return `
+                <div class="product-card" data-product-id="${product.id}">
+                    <div class="product-badge">${product.badge}</div>
+                    <div class="product-image">
+                        <img src="${product.image}" alt="${product.name}" onerror="this.src='https://via.placeholder.com/200x200/8B5CF6/FFFFFF?text=VIP+ХАН'">
+                    </div>
+                    <h3 class="product-name">${product.name}</h3>
+                    <div class="product-price">
+                        <span class="current-price">${product.currentPrice} ₸</span>
+                        <span class="old-price">${product.oldPrice} ₸</span>
+                        <span class="discount">${product.discount}</span>
+                    </div>
+                    <div class="product-buttons">
+                        <button class="btn btn-buy" data-product-id="${product.id}">Купить</button>
+                        <button class="btn btn-whatsapp" data-product-id="${product.id}">
+                            <i class="fab fa-whatsapp"></i>
+                            Заказ по Whatsapp
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Функция отображения товаров
+        function renderProducts() {
+            const newProductsContainer = document.getElementById("new-products");
+            const topProductsContainer = document.getElementById("top-products");
+
+            const newProducts = productsData.filter(product => product.category === "new");
+            const topProducts = productsData.filter(product => product.category === "top");
+
+            newProductsContainer.innerHTML = newProducts.map(product => createProductCard(product)).join("");
+            topProductsContainer.innerHTML = topProducts.map(product => createProductCard(product)).join("");
+
+            // Добавляем обработчики событий с небольшой задержкой
+            setTimeout(() => {
+                addProductButtonHandlers();
+            }, 100);
+        }
+
+        // Функция для добавления обработчиков кнопок товаров
+        function addProductButtonHandlers() {
+            console.log('Добавляем обработчики кнопок...');
+            
+            // Обработчики для кнопок "Купить" (только если еще не добавлены)
+            const buyButtons = document.querySelectorAll('.btn-buy:not([data-handler-added])');
+            console.log('Найдено кнопок "Купить":', buyButtons.length);
+            
+            buyButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    console.log('Нажата кнопка "Купить"');
+                    const productId = parseInt(this.getAttribute('data-product-id'));
+                    addToCart(productId);
+                });
+                button.setAttribute('data-handler-added', 'true');
+            });
+
+            // Обработчики для кнопок WhatsApp (только если еще не добавлены)
+            const whatsappButtons = document.querySelectorAll('.btn-whatsapp:not([data-handler-added])');
+            console.log('Найдено кнопок WhatsApp:', whatsappButtons.length);
+            
+            whatsappButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    console.log('Нажата кнопка WhatsApp');
+                    const productId = parseInt(this.getAttribute('data-product-id'));
+                    orderViaWhatsApp(productId);
+                });
+                button.setAttribute('data-handler-added', 'true');
+            });
+        }
+
+        // Функция добавления в корзину
+        function addToCart(productId) {
+            console.log('addToCart вызвана с productId:', productId);
+            const product = productsData.find(p => p.id === productId);
+            if (product) {
+                console.log('Товар найден:', product.name);
+                // Показываем модальное окно для выбора количества
+                showCartModal(product);
+            } else {
+                console.log('Товар не найден!');
+            }
+        }
+
+        // Функция сохранения товара в корзину
+        function saveToCart(product) {
+            const savedCart = localStorage.getItem('kingSalutCart');
+            let cartItems = savedCart ? JSON.parse(savedCart) : [];
+            
+            const existingItem = cartItems.find(item => item.id === product.id);
+            
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cartItems.push({
+                    id: product.id,
+                    name: product.name,
+                    image: product.image,
+                    price: parseInt(product.currentPrice.replace(/\s/g, '')),
+                    quantity: 1
+                });
+            }
+            
+            localStorage.setItem('kingSalutCart', JSON.stringify(cartItems));
+        }
+
+        // Функция показа модального окна корзины
+        function showCartModal(product) {
+            const modal = document.getElementById("cartModal");
+            const cartItemImage = document.getElementById("cartItemImage");
+            const cartItemName = document.getElementById("cartItemName");
+            const cartItemPrice = document.getElementById("cartItemPrice");
+            const cartItemQuantity = document.getElementById("cartItemQuantity");
+            const cartItemTotal = document.getElementById("cartItemTotal");
+
+            // Заполняем данные товара
+            cartItemImage.src = product.image;
+            cartItemImage.alt = product.name;
+            cartItemName.textContent = product.name;
+            cartItemPrice.textContent = product.currentPrice + " ₸";
+            cartItemQuantity.value = 1;
+            cartItemTotal.textContent = product.currentPrice + " ₸";
+
+            // Показываем модальное окно
+            modal.classList.add("show");
+            document.body.style.overflow = "hidden";
+
+            // Обработчики для кнопок количества
+            const minusBtn = document.querySelector(".quantity-btn.minus");
+            const plusBtn = document.querySelector(".quantity-btn.plus");
+
+            function updateTotal() {
+                const quantity = parseInt(cartItemQuantity.value);
+                const price = parseInt(product.currentPrice.replace(/\s/g, ""));
+                const total = quantity * price;
+                cartItemTotal.textContent = total.toLocaleString() + " ₸";
+            }
+
+            minusBtn.onclick = () => {
+                if (cartItemQuantity.value > 1) {
+                    cartItemQuantity.value = parseInt(cartItemQuantity.value) - 1;
+                    updateTotal();
+                }
+            };
+
+            plusBtn.onclick = () => {
+                if (cartItemQuantity.value < 99) {
+                    cartItemQuantity.value = parseInt(cartItemQuantity.value) + 1;
+                    updateTotal();
+                }
+            };
+
+            cartItemQuantity.onchange = updateTotal;
+
+            // Обработчик для кнопки "Перейти в корзину"
+            const checkoutBtn = document.querySelector(".btn-checkout");
+            if (checkoutBtn) {
+                checkoutBtn.onclick = function() {
+                    const quantity = parseInt(cartItemQuantity.value) || 1;
+                    
+                    // Обновляем количество товара в корзине
+                    updateCartItemQuantity(product, quantity);
+                    
+                    // Закрываем модальное окно
+                    closeCartModal();
+                    
+                    // Переходим в корзину
+                    window.location.href = 'cart.html';
+                };
+            }
+
+            // Обработчик для кнопки "Продолжить покупки"
+            const continueBtn = document.querySelector(".continue-shopping");
+            if (continueBtn) {
+                continueBtn.onclick = function(e) {
+                    e.preventDefault();
+                    closeCartModal();
+                };
+            }
+
+            // Обработчик для кнопки закрытия
+            const closeBtn = document.querySelector(".close");
+            if (closeBtn) {
+                closeBtn.onclick = closeCartModal;
+            }
+
+            // Закрытие по клику вне модального окна
+            modal.onclick = function(e) {
+                if (e.target === modal) {
+                    closeCartModal();
+                }
+            };
+        }
+
+        // Функция обновления количества товара в корзине
+        function updateCartItemQuantity(product, quantity) {
+            const savedCart = localStorage.getItem('kingSalutCart');
+            let cartItems = savedCart ? JSON.parse(savedCart) : [];
+            
+            // Проверяем, есть ли уже такой товар в корзине
+            const existingItem = cartItems.find(item => item.id === product.id);
+            
+            if (existingItem) {
+                // Обновляем количество
+                existingItem.quantity = quantity;
+            } else {
+                // Добавляем новый товар
+                cartItems.push({
+                    id: product.id,
+                    name: product.name,
+                    image: product.image,
+                    price: parseInt(product.currentPrice.replace(/\s/g, '')),
+                    quantity: quantity
+                });
+            }
+            
+            // Сохраняем в localStorage
+            localStorage.setItem('kingSalutCart', JSON.stringify(cartItems));
+            
+            // Обновляем счетчик корзины
+            updateCartCount();
+        }
+
+        // Функция закрытия модального окна корзины
+        function closeCartModal() {
+            const modal = document.getElementById("cartModal");
+            modal.classList.remove("show");
+            document.body.style.overflow = "auto";
+        }
+
+        // Функция заказа через WhatsApp
+        function orderViaWhatsApp(productId) {
+            const product = productsData.find(p => p.id === productId);
+            if (product) {
+                const message = `Здравствуйте! Хочу заказать: ${product.name} за ${product.currentPrice} ₸`;
+                const whatsappUrl = `https://wa.me/77774567868?text=${encodeURIComponent(message)}`;
+                window.open(whatsappUrl, '_blank');
+            }
+        }
+
+        // Функция для обновления счетчика корзины
+        function updateCartCount() {
+            const cartCount = document.getElementById('cartCount');
+            if (cartCount) {
+                const savedCart = localStorage.getItem('kingSalutCart');
+                const cartItems = savedCart ? JSON.parse(savedCart) : [];
+                const totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+                cartCount.textContent = totalItems;
+                cartCount.style.display = totalItems > 0 ? 'flex' : 'none';
+            }
+        }
+
+        // Функция для открытия корзины
+        function openCart() {
+            const savedCart = localStorage.getItem('kingSalutCart');
+            const cartItems = savedCart ? JSON.parse(savedCart) : [];
+            
+            if (cartItems.length === 0) {
+                showNotification('Ваша корзина пуста. Добавьте товары для оформления заказа.');
+                return;
+            }
+            
+            window.location.href = 'simple-cart.html';
+        }
+
+        // Функция для показа уведомлений
+        function showNotification(message) {
+            const existing = document.querySelector('.notification');
+            if (existing) existing.remove();
+            
+            const notification = document.createElement('div');
+            notification.className = 'notification';
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: #28a745;
+                color: white;
+                padding: 15px 20px;
+                border-radius: 8px;
+                z-index: 10000;
+                font-weight: 500;
+                max-width: 300px;
+                animation: slideIn 0.3s ease;
+            `;
+            notification.textContent = message;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.style.animation = 'slideOut 0.3s ease';
+                setTimeout(() => notification.remove(), 300);
+            }, 3000);
+        }
+
+        // Инициализация
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('Рабочая страница загружена');
+            renderProducts();
+            updateCartCount();
+            
+            // Настройка кнопки корзины
+            const cartLink = document.getElementById('cartLink');
+            if (cartLink) {
+                cartLink.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    openCart();
+                });
+            }
+        });
+
+        // CSS анимации
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideIn {
+                from { transform: translateX(100%); opacity: 0; }
+                to { transform: translateX(0); opacity: 1; }
+            }
+            @keyframes slideOut {
+                from { transform: translateX(0); opacity: 1; }
+                to { transform: translateX(100%); opacity: 0; }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
