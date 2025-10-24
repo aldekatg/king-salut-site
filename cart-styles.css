@@ -611,6 +611,10 @@
   font-size: 20px;
 }
 
+.empty-cart {
+  text-align: center;
+}
+
 /* Responsive Design */
 @media (max-width: 1300px) {
   .cart-layout {
